@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label :for="id">{{label}}</label>
+    <label :for="id">{{ label }}</label>
     <select :id="id" :value="currentValue" @input="$emit('input', $event.target.value)">
       <option v-for="option in options" :key="option.value" :value="option.value">
         {{option.text}}
