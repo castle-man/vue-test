@@ -1,15 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <SelectInput id="animal-type" label="Animal Type" :currentValue="animalType" :options="typeOptions"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SelectInput from './components/SelectInput.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SelectInput
+  },
+  data: function() {
+      return {
+          typeOptions: [
+                { text: 'Dog', value: 'dog' },
+                { text: 'Cat', value: 'cat' },
+                { text: 'Cow', value: 'cow' },
+                { text: 'Pig', value: 'pig' }
+          ],
+          animalType: 'dog',
+      }
   }
 }
 </script>
