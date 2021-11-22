@@ -1,14 +1,25 @@
 <template>
-  <SelectInput id="animal-type" label="Animal Type" :currentValue="animalType" :options="typeOptions"/>
+    <div>
+        <SelectInput id="animal-type-select" label="Animal Type" v-model="animalType" :options="typeOptions" />
+
+        <p>
+            <Input label="Animal Type" id="animal-type-input" v-model="animalType"/>
+        </p>
+        <div>
+            <h1>Favorite Animal: {{ animalType }}</h1>
+        </div>
+    </div>
 </template>
 
 <script>
 import SelectInput from './components/SelectInput.vue'
+import Input from './components/Input.vue'
 
 export default {
   name: 'App',
   components: {
-    SelectInput
+    SelectInput,
+    Input
   },
   data: function() {
       return {
@@ -19,6 +30,7 @@ export default {
                 { text: 'Pig', value: 'pig' }
           ],
           animalType: 'dog',
+          input: ''
       }
   }
 }
